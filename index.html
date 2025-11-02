@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoyoung Oh - Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background Elements */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(67, 84, 200, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(90, 111, 216, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            animation: fadeIn 0.6s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Top Decorative Bar */
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4354c8, #5a6fd8, transparent);
+            box-shadow: 0 0 20px rgba(67, 84, 200, 0.5);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Decorative circles around profile */
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 180px;
+            border: 2px solid rgba(67, 84, 200, 0.2);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1);
+                opacity: 0.2;
+            }
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4354c8, #5a6fd8);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #aaa;
+            border: 4px solid rgba(67, 84, 200, 0.3);
+            box-shadow: 0 8px 32px rgba(67, 84, 200, 0.3), 0 0 0 1px rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-title {
+            font-size: 16px;
+            color: #4354c8;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Medical AI Tags */
+        .medical-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .medical-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(67, 84, 200, 0.15);
+            color: #4354c8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid rgba(67, 84, 200, 0.3);
+            letter-spacing: 0.3px;
+            animation: tagFloat 3s ease-in-out infinite;
+        }
+
+        .medical-tag:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .medical-tag:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .medical-tag:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes tagFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .medical-tag::before {
+            content: '⚕️';
+            font-size: 14px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            background: rgba(42, 42, 42, 0.8);
+            border: 1px solid #333333;
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(67, 84, 200, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-item:hover {
+            background: rgba(67, 84, 200, 0.15);
+            border-color: #4354c8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(67, 84, 200, 0.2);
+        }
+
+        .link-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(67, 84, 200, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-item:hover .link-icon {
+            background: #4354c8;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .link-content {
+            flex: 1;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .link-subtitle {
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #333333, transparent);
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: #4354c8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(67, 84, 200, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4354c8, transparent);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .footer-year {
+            font-size: 12px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Notion Icon */
+        .icon-notion::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: currentColor;
+            display: block;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+
+        /* Tistory Icon */
+        .icon-tistory::before {
+            content: 'T';
+            font-weight: 700;
+            font-size: 22px;
+            font-family: serif;
+        }
+
+        /* GitHub Icon */
+        .icon-github::before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            background: currentColor;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat;
+            display: block;
+        }
+
+        /* LinkedIn Icon */
+        .icon-linkedin::before {
+            content: 'in';
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        /* Email Icon */
+        .icon-email::before {
+            content: '✉️';
+        }
+
+        /* Phone Icon - SVG */
+        .icon-phone::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: currentColor;
+            display: block;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+
+        /* CV Icon */
+        .icon-cv::before {
+            content: '📄';
+        }
+
+        @media (max-width: 640px) {
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-title {
+                font-size: 14px;
+            }
+
+            .link-item {
+                padding: 18px 20px;
+            }
+
+            .link-title {
+                font-size: 16px;
+            }
+
+            body::before,
+            body::after {
+                width: 400px;
+                height: 400px;
+            }
+
+            .medical-tags {
+                gap: 8px;
+            }
+
+            .medical-tag {
+                font-size: 11px;
+                padding: 5px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar"></div>
+    
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">
+                
+                <img src="images/profile.jpg" alt="Seoyoung Oh" style="display: none;">
+               
+                <span>Add Photo</span>
+            </div>
+            <h1 class="profile-name">Seoyoung Oh</h1>
+            <p class="profile-title">Medical AI Researcher | AI Product Developer</p>
+            
+            <!-- Medical AI Interest Tags -->
+            <div class="medical-tags">
+                <span class="medical-tag">Medical AI</span>
+                <span class="medical-tag">Healthcare</span>
+                <span class="medical-tag">Deep Learning</span>
+            </div>
+        </div>
+
+        <div class="links-container">
+            <a href="https://github.com/5seoyoung" target="_blank" class="link-item">
+                <div class="link-icon icon-github"></div>
+                <div class="link-content">
+                    <div class="link-title">GitHub</div>
+                    <div class="link-subtitle">@5seoyoung</div>
+                </div>
+            </a>
+
+            <a href="https://unleashed-oil-858.notion.site/5seo0oh?source=copy_link" target="_blank" class="link-item">
+                <div class="link-icon icon-notion"></div>
+                <div class="link-content">
+                    <div class="link-title">Portfolio</div>
+                    <div class="link-subtitle">Projects & Research</div>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="https://5seo0.tistory.com/" target="_blank" class="link-item">
+                <div class="link-icon icon-tistory"></div>
+                <div class="link-content">
+                    <div class="link-title">Blog</div>
+                    <div class="link-subtitle">Tech & Research Articles</div>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/5seo0/" target="_blank" class="link-item">
+                <div class="link-icon icon-linkedin"></div>
+                <div class="link-content">
+                    <div class="link-title">LinkedIn</div>
+                    <div class="link-subtitle">Professional Network</div>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="mailto:inmani1555@gmail.com" class="link-item">
+                <div class="link-icon icon-email"></div>
+                <div class="link-content">
+                    <div class="link-title">E-mail</div>
+                    <div class="link-subtitle">inmani1555@gmail.com</div>
+                </div>
+            </a>
+
+            <a href="tel:+821098100402" class="link-item">
+                <div class="link-icon icon-phone"></div>
+                <div class="link-content">
+                    <div class="link-title">Call</div>
+                    <div class="link-subtitle">010-9810-0402</div>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="cv.pdf" download class="link-item">
+                <div class="link-icon icon-cv"></div>
+                <div class="link-content">
+                    <div class="link-title">Download CV</div>
+                    <div class="link-subtitle">View My Resume (PDF)</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">Let's collaborate on innovative healthcare solutions</p>
+            <p class="footer-year">© 2025 Seoyoung Oh</p>
+        </div>
+    </div>
+
+    <script>
+        // 이미지가 로드되면 표시하고 텍스트 숨기기
+        const profileImg = document.querySelector('.profile-image img');
+        const profileText = document.querySelector('.profile-image span');
+        
+        profileImg.addEventListener('load', function() {
+            this.style.display = 'block';
+            profileText.style.display = 'none';
+        });
+        
+        // 이미지 로드 실패 시 텍스트 유지
+        profileImg.addEventListener('error', function() {
+            this.style.display = 'none';
+            profileText.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
